@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIFEOS · Personal Performance System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237c8cff'/><path d='M7 22l6-7 5 4 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo"><svg viewBox="0 0 32 32"><path d="M6 23l6.5-7.5 5 4L26 9" /></svg></div>
+        <div>
+          <div class="brand-name">LIFEOS</div>
+          <div class="brand-sub">Personal performance system</div>
+        </div>
+      </div>
+      <nav id="nav">
+        <a href="#/dashboard" data-route="dashboard"><span class="ico">◧</span><span><b>Dashboard</b><small>Overall life performance</small></span><kbd>1</kbd></a>
+        <a href="#/explore" data-route="explore"><span class="ico">σ</span><span><b>Explore <em class="new">EDA</em></b><small>Run data science on your life</small></span><kbd>2</kbd></a>
+        <a href="#/track" data-route="track"><span class="ico">✓</span><span><b>Track</b><small>Daily activities &amp; habits</small></span><kbd>3</kbd></a>
+        <a href="#/goals" data-route="goals"><span class="ico">◎</span><span><b>Goals</b><small>Development projects</small></span><kbd>4</kbd></a>
+        <a href="#/analytics" data-route="analytics"><span class="ico">↗</span><span><b>Analytics</b><small>Growth, PBs, drawdowns</small></span><kbd>5</kbd></a>
+        <a href="#/reports" data-route="reports"><span class="ico">▤</span><span><b>Reports</b><small>Weekly &amp; monthly reviews</small></span><kbd>6</kbd></a>
+        <div class="nav-sep">Coming next</div>
+        <a class="disabled" title="Phase 2: Google / Outlook calendar + intelligent scheduling"><span class="ico">▦</span><span><b>Schedule</b><small>Phase 2</small></span></a>
+        <a class="disabled" title="Phase 3: wellbeing analytics &amp; recovery"><span class="ico">♡</span><span><b>Wellbeing</b><small>Phase 3</small></span></a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="btn primary ql-side" data-quicklog>+ Quick log <kbd>L</kbd></button>
+        <button class="link" id="btn-help">Keyboard shortcuts <kbd>?</kbd></button>
+        <button class="link" id="btn-export">Export CSV</button>
+        <button class="link" id="btn-reset">Reset demo data</button>
+        <button class="link danger" id="btn-clear">Start fresh</button>
+        <a class="link" href="/api/docs" target="_blank">API docs</a>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <div class="eyebrow" id="page-eyebrow"></div>
+          <h1 id="page-title"></h1>
+        </div>
+        <div class="topbar-right" id="page-actions"></div>
+      </header>
+      <section id="view" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <button class="fab" data-quicklog title="Quick log (L)" aria-label="Quick log">+</button>
+
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-head"><h3 id="modal-title"></h3><button class="icon-btn" data-close aria-label="Close">✕</button></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="/static/vendor/chart.umd.min.js"></script>
+  <script type="module" src="/static/js/main.js"></script>
+</body>
+</html>

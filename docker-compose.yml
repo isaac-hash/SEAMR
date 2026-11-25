@@ -1,0 +1,14 @@
+services:
+  lifeos:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - lifeos-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  lifeos-data:
